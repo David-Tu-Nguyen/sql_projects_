@@ -15,7 +15,7 @@ cst_key,
 TRIM(cst_firstname) AS cst_firstname, 
 TRIM(cst_lastname) AS cst_lastname,
 CASE 
-	WHEN UPPER(TRIM(cst_marital_Status)) = 'M' THEN 'Mariage'
+	WHEN UPPER(TRIM(cst_marital_Status)) = 'M' THEN 'Mariage' -- TRIM(cst_marital_Status)	Xóa khoảng trắng ở đầu và cuối chuỗi cst_marital_Status
 	WHEN UPPER(TRIM(cst_marital_Status)) = 'S' THEN 'Single'
 ELSE 'n/a'
 END cst_marital_Status,
