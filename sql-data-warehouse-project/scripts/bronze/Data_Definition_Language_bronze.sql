@@ -8,6 +8,7 @@ Script Purpose:
 	  Run this script to re-define the DDL structure of 'bronze' Tables
 ===============================================================================
 */
+/* Nếu bảng crm_cust_info trong schema bronze đang tồn tại, thì hãy xóa nó. Tham số 'U' đại diện cho User Table, do mìnhh tạo*/
 
 IF OBJECT_ID('bronze.crm_cust_info', 'U') IS NOT NULL
     DROP TABLE bronze.crm_cust_info;
