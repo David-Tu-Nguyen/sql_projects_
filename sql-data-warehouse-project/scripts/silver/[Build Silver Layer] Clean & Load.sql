@@ -1,3 +1,4 @@
+-- [Build Silver Layer] Clean & Load crm_cust_info.sql
 
 INSERT INTO silver.crm_cust_info(
 	cst_id, 
