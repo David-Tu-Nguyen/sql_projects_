@@ -74,12 +74,13 @@ SELECT prd_nm
 FROM bronze.crm_prd_info
 WHERE prd_nm  != TRIM(prd_nm )
 
-
---Data Standardization & Consistency
+-- Check for NULLs or Negative Numbers
+-- Expectation: No Results 
 SELECT prd_cost
 FROM bronze.crm_prd_info
 WHERE prd_cost < 0 OR prd_cost IS NULL
-
+  
+--Data Standardization & Consistency
 SELECT DISTINCT prd_line
 FROM bronze.crm_prd_info
 
@@ -105,16 +106,17 @@ HAVING COUNT(*) > 1 OR prd_id IS NULL
 
 --Check for unwanted Spaces 
 -- Expectation: No Results 
-SELECT prd_nm 
+SELECT prd_nm
 FROM silver.crm_prd_info
 WHERE prd_nm  != TRIM(prd_nm )
 
+-- Check for NULLs or Negative Numbers
+-- Expectation: No Results 
+Select prd_cost
+FROM silver.crm_prd_info
+WHERE prd_cost <0 OR prd_cost IS NULL
 
 --Data Standardization & Consistency
-SELECT prd_cost
-FROM silver.crm_prd_info
-WHERE prd_cost < 0 OR prd_cost IS NULL
-
 SELECT DISTINCT prd_line
 FROM silver.crm_prd_info
 
