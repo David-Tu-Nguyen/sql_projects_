@@ -195,7 +195,8 @@ OR sls_sales <= 0 OR sls_quantity <= 0 OR sls_price <= 0
 ORDER BY sls_sales,
 sls_quantity,
 sls_price 
-
+SELECT * 
+FROM silver.crm_sales_details
 
 
 
