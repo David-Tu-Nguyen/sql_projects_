@@ -107,5 +107,4 @@ Hi there! I'm **David Tu Nguyen**. I recently graduated with a degree in Busines
 
 📫 How to reach me: 
 ## 🌐 Socials
-[![LinkedIn](https://www.linkedin.com/in/nguyentu2201/)
-
+[LinkedIn](https://www.linkedin.com/in/nguyentu2201/)
