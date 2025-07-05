@@ -20,8 +20,8 @@ Usage Example:
 
 CREATE OR ALTER PROCEDURE silver.load_silver AS
 BEGIN
-    DECLARE @start_time DATETIME, @end_time DATETIME, @batch_start_time DATETIME, @batch_end_time DATETIME; 
-    BEGIN TRY
+    DECLARE @start_time DATETIME, @end_time DATETIME, @batch_start_time DATETIME, @batch_end_time DATETIME; --ghi nhận thời gian bắt đầu – kết thúc toàn bộ quá trình, cũng như từng bảng.
+    BEGIN TRY --chạy ETL chính
         SET @batch_start_time = GETDATE();
         PRINT '================================================';
         PRINT 'Loading Silver Layer';
@@ -242,7 +242,7 @@ BEGIN
 		PRINT '=========================================='
 		
 	END TRY
-	BEGIN CATCH
+	BEGIN CATCH -- log lỗi nếu ETL fail
 		PRINT '=========================================='
 		PRINT 'ERROR OCCURED DURING LOADING BRONZE LAYER'
 		PRINT 'Error Message' + ERROR_MESSAGE();
