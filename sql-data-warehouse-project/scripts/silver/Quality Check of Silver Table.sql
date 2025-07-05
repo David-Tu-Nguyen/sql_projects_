@@ -310,3 +310,52 @@ ORDER BY cntry
 
 SELECT * 
 FROM silver.erp_loc_a101
+
+
+/*
+===============================================================================
+Quality Check of Bronze Table: erp_px_cat_g1v2
+===============================================================================
+*/
+--Check for unwanted Spaces
+SELECT * 
+FROM bronze.erp_px_cat_g1v2
+WHERE cat != TRIM(cat) OR subcat != TRIM(subcat) OR maintenance  != TRIM (maintenance )
+
+-- Data Standardization & Consistency 
+SELECT DISTINCT
+cat
+FROM bronze.erp_px_cat_g1v2
+
+SELECT DISTINCT
+maintenance
+FROM bronze.erp_px_cat_g1v2
+
+SELECT DISTINCT
+subcat
+FROM bronze.erp_px_cat_g1v2
+/*
+===============================================================================
+Quality Check of Silver Table: erp_px_cat_g1v2
+===============================================================================
+*/
+--Check for unwanted Spaces
+SELECT * 
+FROM silver.erp_px_cat_g1v2
+WHERE cat != TRIM(cat) OR subcat != TRIM(subcat) OR maintenance  != TRIM (maintenance )
+
+-- Data Standardization & Consistency 
+SELECT DISTINCT
+cat
+FROM silver.erp_px_cat_g1v2
+
+SELECT DISTINCT
+maintenance
+FROM silver.erp_px_cat_g1v2
+
+SELECT DISTINCT
+subcat
+FROM silver.erp_px_cat_g1v2
+
+SELECT * 
+FROM silver.erp_px_cat_g1v2
