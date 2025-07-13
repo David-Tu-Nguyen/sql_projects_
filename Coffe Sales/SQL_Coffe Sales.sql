@@ -83,7 +83,7 @@ ORDER BY year, month;
 4. Step 4: Measures Exploration (Key Metrics)
 ===============================================================================
 */
--- Total revenue (sales = qty × unit_price)
+-- Total revenue (sales = qty Ã— unit_price)
 SELECT 
 	ROUND(SUM(transaction_qty * unit_price),2) AS total_sales
 FROM [dbo].[Coffee Shop Salescsv];
@@ -247,7 +247,7 @@ ORDER BY pct_of_total_sales DESC;
 */
 
 -- Optional: Add time of day column
--- Morning: 5–11, Afternoon: 12–17, Evening: 18–23, Night: 0–4
+-- Morning: 5Â–11, Afternoon: 12Â–17, Evening: 18Â–23, Night: 0Â–4
 
 ALTER TABLE [dbo].[Coffee Shop Salescsv]
 ADD transaction_hour AS DATEPART(HOUR, CAST(transaction_time AS time));
